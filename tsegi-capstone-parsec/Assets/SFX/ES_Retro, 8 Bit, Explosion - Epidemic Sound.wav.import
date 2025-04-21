@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bq2gl8vn8lp1v"
+path="res://.godot/imported/ES_Retro, 8 Bit, Explosion - Epidemic Sound.wav-24d94a9de4aee2bd3568db6f87ef8cdf.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/ES_Retro, 8 Bit, Explosion - Epidemic Sound.wav"
+dest_files=["res://.godot/imported/ES_Retro, 8 Bit, Explosion - Epidemic Sound.wav-24d94a9de4aee2bd3568db6f87ef8cdf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqsdxe4te6qv6"]
 
 [ext_resource type="Script" uid="uid://cqdn552gtmvie" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bbrt05iwtwpg4" path="res://Assets/Textures/Artemis-Draft-V01.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://pwocys30fihj" path="res://Assets/Textures/Artemis-Draft-V02.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
@@ -9,7 +9,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_v0iea")
+texture = ExtResource("2_cvnsp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-180, 6, -181, -26, -73, -130, -70, -159, 72, -155, 71, -136, 186, -21, 185, 7, 25, 10, 22, 82, 41, 87, 31, 217, -33, 208, -37, 89, -24, 85, -29, 10)

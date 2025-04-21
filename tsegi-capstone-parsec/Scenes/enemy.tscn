@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://c8lnvtdfr7uuj"]
+[gd_scene load_steps=4 format=3 uid="uid://c8lnvtdfr7uuj"]
+
+[ext_resource type="Script" uid="uid://brte40ok2rhlq" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://bhjg5phhelmad" path="res://Assets/Textures/Nexus-Draft-V01.png" id="1_hghv2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
+radius = 63.0079
 
 [node name="Enemy" type="Area2D"]
+script = ExtResource("1_1f0kj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_hghv2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_afpow")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -77)
