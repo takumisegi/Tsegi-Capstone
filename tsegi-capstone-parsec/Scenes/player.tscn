@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pwocys30fihj" path="res://Assets/Textures/Artemis-Draft-V02.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 

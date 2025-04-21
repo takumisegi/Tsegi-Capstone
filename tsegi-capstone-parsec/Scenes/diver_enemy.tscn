@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwcidx2luwrw"]
+
+[ext_resource type="PackedScene" uid="uid://c8lnvtdfr7uuj" path="res://Scenes/enemy.tscn" id="1_cmxwi"]
+
+[node name="DiverEnemy" instance=ExtResource("1_cmxwi")]
+speed = 400
