@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcecvajdmpy7k"]
+[gd_scene load_steps=4 format=3 uid="uid://bcecvajdmpy7k"]
 
 [ext_resource type="Script" uid="uid://d1vph07qivupb" path="res://Scripts/hud.gd" id="1_e0onf"]
+[ext_resource type="FontFile" uid="uid://dnw034db8edl8" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf" id="2_fccik"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fccik"]
+font = ExtResource("2_fccik")
 font_size = 50
 
 [node name="HUD" type="Control"]
@@ -17,10 +19,10 @@ script = ExtResource("1_e0onf")
 
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 69.0
-grow_horizontal = 2
+offset_left = 33.0
+offset_top = 19.0
+offset_right = 357.0
+offset_bottom = 88.0
 text = "SCORE: 9999"
 label_settings = SubResource("LabelSettings_fccik")
 horizontal_alignment = 1

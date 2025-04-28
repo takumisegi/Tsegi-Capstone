@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl6cgyw2cgfch"]
+[gd_scene load_steps=7 format=3 uid="uid://cl6cgyw2cgfch"]
 
 [ext_resource type="Script" uid="uid://1gyn2v8ysvtc" path="res://Scripts/game_over_screen.gd" id="1_0gua7"]
+[ext_resource type="FontFile" uid="uid://dnw034db8edl8" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf" id="2_jb6in"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wydum"]
-bg_color = Color(1, 1, 0.705882, 0.313726)
+bg_color = Color(1, 1, 1, 0.192157)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0gua7"]
+font = ExtResource("2_jb6in")
 font_size = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_jb6in"]
+font = ExtResource("2_jb6in")
 font_size = 45
+
+[sub_resource type="Theme" id="Theme_jb6in"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -48,8 +53,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_wydum")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 36.0
-offset_bottom = 99.0
+offset_top = 60.0
+offset_bottom = 123.0
 grow_horizontal = 2
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_0gua7")
@@ -96,6 +101,9 @@ offset_right = 72.0
 offset_bottom = 127.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_jb6in")
+theme_override_fonts/font = ExtResource("2_jb6in")
 text = "RETRY"
+icon_alignment = 1
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

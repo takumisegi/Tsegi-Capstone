@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dnw034db8edl8"
+path="res://.godot/imported/FoundryGridnik Bold.otf-0ccfd8092c523e4de2d3eccf02c42174.fontdata"
+
+[deps]
+
+source_file="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf"
+dest_files=["res://.godot/imported/FoundryGridnik Bold.otf-0ccfd8092c523e4de2d3eccf02c42174.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

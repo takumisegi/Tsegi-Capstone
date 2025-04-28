@@ -19,11 +19,7 @@ enemy_scenes = Array[PackedScene]([ExtResource("4_kldst"), ExtResource("5_b2bpf"
 
 [node name="SFX" type="Node" parent="."]
 
-[node name="LaserSound" type="AudioStreamPlayer" parent="SFX"]
-
-[node name="HitSound" type="AudioStreamPlayer" parent="SFX"]
-
-[node name="ExplosionSound" type="AudioStreamPlayer" parent="SFX"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFX"]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 
@@ -65,7 +61,6 @@ position = Vector2(1519, 304)
 [node name="DiverEnemy" parent="." instance=ExtResource("5_b2bpf")]
 visible = false
 position = Vector2(694, 267)
-hp = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
