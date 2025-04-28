@@ -8,6 +8,7 @@ extends Node2D
 @onready var enemy_container = $EnemyContainer
 
 var player = null
+var score := 0
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -29,5 +30,12 @@ func _on_player_laser_shot(laser_scene, location):
 func _on_enemy_spawn_timer_timeout() -> void:
 	var e = enemy_scenes.pick_random().instantiate()
 	e.global_position = Vector2(randf_range(50,1900), -50)
+	e.killed.connect(_on_enemy_killed)
 	enemy_container.add_child(e)
+	
+func _on_enemy_killed():
+	score += 100
+	print(score)
+	
+	
 	
