@@ -1,6 +1,6 @@
 class_name Enemy extends Area2D
 
-signal killed
+signal killed(points)
 
 @export var speed = 100
 @export var hp = 1

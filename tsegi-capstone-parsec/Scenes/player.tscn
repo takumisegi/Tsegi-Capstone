@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqsdxe4te6qv6"]
 
 [ext_resource type="Script" uid="uid://cqdn552gtmvie" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://pwocys30fihj" path="res://Assets/Textures/Artemis-Draft-V02.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://ldbfb1k8ut37" path="res://Assets/Textures/Artemis-White-V01.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 2

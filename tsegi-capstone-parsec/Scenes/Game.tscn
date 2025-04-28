@@ -1,16 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://836jfruktl3u"]
+[gd_scene load_steps=10 format=3 uid="uid://836jfruktl3u"]
 
 [ext_resource type="Script" uid="uid://gqc4mfdyswxt" path="res://Scripts/game.gd" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://cqsdxe4te6qv6" path="res://Scenes/player.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://b8mnlb8f1w1qv" path="res://Scenes/laser.tscn" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://bcecvajdmpy7k" path="res://Scenes/hud.tscn" id="4_7lihs"]
 [ext_resource type="PackedScene" uid="uid://c8lnvtdfr7uuj" path="res://Scenes/enemy.tscn" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://bwcidx2luwrw" path="res://Scenes/diver_enemy.tscn" id="5_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://cl6cgyw2cgfch" path="res://Scenes/game_over_screen.tscn" id="5_fgofq"]
+[ext_resource type="Texture2D" uid="uid://b8l0okxlm8fow" path="res://Assets/Textures/Game-BG-Grid-V01.png" id="8_2irst"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2irst"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
 
 [node name="Main Scene" type="Node2D"]
 script = ExtResource("1_iukft")
 enemy_scenes = Array[PackedScene]([ExtResource("4_kldst"), ExtResource("5_b2bpf")])
 
+[node name="SFX" type="Node" parent="."]
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="HitSound" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UILayer" instance=ExtResource("4_7lihs")]
+
+[node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_fgofq")]
+visible = false
+
+[node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(960, -88)
+amount = 20
+lifetime = 1.25
+preprocess = 5.0
+process_material = SubResource("ParticleProcessMaterial_2irst")
+
 [node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_gl6un")]
@@ -35,5 +66,17 @@ position = Vector2(1519, 304)
 visible = false
 position = Vector2(694, 267)
 hp = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(0, 1080)
+
+[node name="Grid" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("8_2irst")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
