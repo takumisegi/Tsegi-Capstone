@@ -10,6 +10,10 @@ extends Node2D
 @onready var gos = $UILayer/GameOverScreen
 @onready var pb = $ParallaxBackground
 
+@onready var laser_sound = $SFX/LaserSFX
+@onready var hit_sound = $SFX/HitSFX
+@onready var explode_sound = $SFX/ExplodeSFX
+
 var player = null
 var score := 0:
 	set(value):
@@ -46,7 +50,7 @@ func _process(delta):
 		get_tree().reload_current_scene()
 		
 		if timer.wait_time > 0.5:
-			timer.wait_time -= delta*0.005
+			timer.wait_time -= delta*0.01
 		elif timer.wait_time < 0.5:
 			timer.wait_time = 0.5
 		print(timer.wait_time)
@@ -60,20 +64,27 @@ func _on_player_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
 	laser_container.add_child(laser)
+	laser_sound.play()
 
 func _on_enemy_spawn_timer_timeout() -> void:
 	var e = enemy_scenes.pick_random().instantiate()
 	e.global_position = Vector2(randf_range(50,1900), -50)
 	e.killed.connect(_on_enemy_killed)
+	e.hit.connect(_on_enemy_hit)
 	enemy_container.add_child(e)
 	
 func _on_enemy_killed(points):
+	hit_sound.play()
 	score += points
 	if score > high_score:
 		high_score = score
 	print(score)
 	
+func _on_enemy_hit():
+		hit_sound.play()
+	
 func _on_player_killed():
+	explode_sound.play()
 	gos.set_score(score) 
 	gos.set_high_score(high_score)
 	save_game()

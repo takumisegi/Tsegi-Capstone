@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://836jfruktl3u"]
+[gd_scene load_steps=14 format=3 uid="uid://836jfruktl3u"]
 
 [ext_resource type="Script" uid="uid://gqc4mfdyswxt" path="res://Scripts/game.gd" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://cqsdxe4te6qv6" path="res://Scenes/player.tscn" id="2_gl6un"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c8lnvtdfr7uuj" path="res://Scenes/enemy.tscn" id="4_kldst"]
 [ext_resource type="PackedScene" uid="uid://bwcidx2luwrw" path="res://Scenes/diver_enemy.tscn" id="5_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://cl6cgyw2cgfch" path="res://Scenes/game_over_screen.tscn" id="5_fgofq"]
-[ext_resource type="Texture2D" uid="uid://b3futebuod4ak" path="res://Assets/Textures/Game-BG-Grid-V03.png" id="8_2irst"]
+[ext_resource type="AudioStream" uid="uid://p3awd7532yr0" path="res://Assets/SFX/Laser_Short_V01.mp3" id="6_71axn"]
+[ext_resource type="AudioStream" uid="uid://c08bay3fh0duq" path="res://Assets/SFX/Hit_V01.mp3" id="7_dahhg"]
+[ext_resource type="AudioStream" uid="uid://b2dokmob00nfs" path="res://Assets/SFX/Explosion_V01.mp3" id="8_dahhg"]
+[ext_resource type="AudioStream" uid="uid://rkcr5bbnb6n6" path="res://Assets/SFX/Sonar_V01.mp3" id="9_3so38"]
+[ext_resource type="Texture2D" uid="uid://d3epyqrmfmt1x" path="res://Assets/Textures/Game-BG-Grid-V04.png" id="12_3so38"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2irst"]
 particle_flag_disable_z = true
@@ -26,7 +30,25 @@ enemy_scenes = Array[PackedScene]([ExtResource("4_kldst"), ExtResource("5_b2bpf"
 [node name="GameOverScreen" parent="UILayer" instance=ExtResource("5_fgofq")]
 visible = false
 
+[node name="SFX" type="Node" parent="."]
+
+[node name="LaserSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_71axn")
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_dahhg")
+
+[node name="ExplodeSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_dahhg")
+
+[node name="Sonar" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_3so38")
+volume_db = -9.0
+autoplay = true
+parameters/looping = true
+
 [node name="StarParticleEffect" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(960, -88)
 amount = 20
 lifetime = 1.25
@@ -66,7 +88,7 @@ motion_mirroring = Vector2(0, 1080)
 
 [node name="Grid" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-texture = ExtResource("8_2irst")
+texture = ExtResource("12_3so38")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 1920, 1080)

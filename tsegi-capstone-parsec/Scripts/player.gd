@@ -4,7 +4,6 @@ signal laser_shot(laser_scene, location)
 signal killed
 
 @export var speed = 300
-
 @onready var muzzle = $Muzzle
 
 var laser_scene = preload("res://Scenes/laser.tscn")
