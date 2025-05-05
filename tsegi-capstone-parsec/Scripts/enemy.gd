@@ -20,6 +20,6 @@ func _on_body_entered(body: Node2D) -> void:
 func take_damage(amount):
 	hp -= amount
 	if hp <= 0:
-		killed.emit()
+		killed.emit(points)
 		die()
 	

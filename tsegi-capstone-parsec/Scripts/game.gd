@@ -49,7 +49,7 @@ func _process(delta):
 			timer.wait_time -= delta*0.005
 		elif timer.wait_time < 0.5:
 			timer.wait_time = 0.5
-		#print(timer.wait_time)
+		print(timer.wait_time)
 	
 	pb.scroll_offset.y += delta*scroll_speed
 	#print(pb.scroll_offset.y)
