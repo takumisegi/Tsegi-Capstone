@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqsdxe4te6qv6"]
 
 [ext_resource type="Script" uid="uid://cqdn552gtmvie" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://ldbfb1k8ut37" path="res://Assets/Textures/Artemis-White-V01.png" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://rbtupn0wh7tp" path="res://Assets/Textures/Artemis-V01.png" id="2_cvnsp"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.7, 0.7)
@@ -10,11 +10,11 @@ motion_mode = 1
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_cvnsp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-180, 6, -181, -26, -73, -130, -70, -159, 72, -155, 71, -136, 186, -21, 185, 7, 25, 10, 22, 82, 41, 87, 31, 217, -33, 208, -37, 89, -24, 85, -29, 10)
+polygon = PackedVector2Array(-50, -44.2857, -181, -26, -73, -130, -28.5714, -138.571, 32.8571, -138.571, 71, -136, 186, -21, 52.8571, -38.5714, 50, 15.7143, 22, 82, 41, 87, 41.4286, 142.857, -42.8571, 141.429, -37, 89, -24, 85, -45.7143, 15.7143)
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(0, -173)

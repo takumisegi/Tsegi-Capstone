@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8lnvtdfr7uuj"]
 
 [ext_resource type="Script" uid="uid://brte40ok2rhlq" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://c5ngiq70m3ku7" path="res://Assets/Textures/Enemy-White-V01.png" id="2_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://c1iduoqjkrv47" path="res://Assets/Textures/Enemy-White-V02.png" id="2_1f0kj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
 radius = 63.0079
@@ -13,7 +13,7 @@ script = ExtResource("1_1f0kj")
 hp = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_1f0kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
