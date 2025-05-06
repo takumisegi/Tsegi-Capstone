@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Tsegi-Capstone-Parsec"
-run/main_scene="uid://836jfruktl3u"
+run/main_scene="uid://c72wmfajrpmal"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
@@ -79,5 +79,6 @@ shoot={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

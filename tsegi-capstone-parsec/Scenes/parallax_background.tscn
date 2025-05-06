@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1gbyhj2aaa0m"]
+
+[ext_resource type="Texture2D" uid="uid://d3epyqrmfmt1x" path="res://Assets/Textures/Game-BG-Grid-V04.png" id="1_0fo66"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 1080)
+
+[node name="Grid" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_0fo66")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)

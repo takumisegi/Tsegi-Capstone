@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dnw034db8edl8" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf" id="2_jb6in"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wydum"]
-bg_color = Color(1, 1, 1, 0.192157)
+bg_color = Color(0.843137, 0.870588, 0.862745, 0.117647)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0gua7"]
 font = ExtResource("2_jb6in")
@@ -32,7 +32,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.54902)
+color = Color(0.0666667, 0.0666667, 0.0666667, 0.392157)
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -54,7 +54,7 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_top = 60.0
-offset_bottom = 123.0
+offset_bottom = 115.0
 grow_horizontal = 2
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_0gua7")
@@ -65,9 +65,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 3.0
-offset_top = 158.0
+offset_top = 135.0
 offset_right = 3.0
-offset_bottom = 221.0
+offset_bottom = 198.0
 grow_horizontal = 2
 text = "HI SCORE: 9999"
 label_settings = SubResource("LabelSettings_jb6in")
@@ -79,9 +79,9 @@ layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 3.0
-offset_top = 225.0
+offset_top = 202.0
 offset_right = 3.0
-offset_bottom = 288.0
+offset_bottom = 265.0
 grow_horizontal = 2
 text = "SCORE: 9999"
 label_settings = SubResource("LabelSettings_jb6in")
@@ -95,10 +95,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = 101.0
-offset_right = 72.0
-offset_bottom = 127.0
+offset_left = -110.0
+offset_top = 83.0
+offset_right = 110.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_jb6in")

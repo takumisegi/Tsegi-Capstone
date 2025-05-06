@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcecvajdmpy7k"]
+[gd_scene load_steps=6 format=3 uid="uid://bcecvajdmpy7k"]
 
 [ext_resource type="Script" uid="uid://d1vph07qivupb" path="res://Scripts/hud.gd" id="1_e0onf"]
 [ext_resource type="FontFile" uid="uid://dnw034db8edl8" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf" id="2_fccik"]
+[ext_resource type="FontFile" uid="uid://dpuoweslunqw0" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Medium.otf" id="3_bjfho"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fccik"]
 font = ExtResource("2_fccik")
 font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fbih"]
+font = ExtResource("3_bjfho")
+font_size = 18
+shadow_size = 0
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -27,3 +33,40 @@ text = "SCORE: 9999"
 label_settings = SubResource("LabelSettings_fccik")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Artemis" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -63.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "ARTEMIS - 1506"
+label_settings = SubResource("LabelSettings_6fbih")
+
+[node name="TARGET" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1870.0
+offset_top = -63.0
+offset_right = -1722.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "TARGET - NEXUS"
+label_settings = SubResource("LabelSettings_6fbih")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, 55)
+points = PackedVector2Array(423, 0, 1876, 0)
+width = 1.0

@@ -50,7 +50,7 @@ func _process(delta):
 		get_tree().reload_current_scene()
 		
 		if timer.wait_time > 0.5:
-			timer.wait_time -= delta*0.01
+			timer.wait_time -= delta*0.5
 		elif timer.wait_time < 0.5:
 			timer.wait_time = 0.5
 		print(timer.wait_time)
