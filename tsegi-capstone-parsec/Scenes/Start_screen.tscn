@@ -68,6 +68,7 @@ horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="MENU/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
 text = "START"
 
 [node name="StoryButton" type="Button" parent="MENU/VBoxContainer"]
@@ -76,6 +77,7 @@ text = "STORY"
 
 [node name="Quit" type="Button" parent="MENU/VBoxContainer"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../Start")
 text = "QUIT"
 
 [node name="2025 © STUDIO TIKTAK" type="Label" parent="."]

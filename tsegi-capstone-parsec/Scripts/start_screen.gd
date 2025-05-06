@@ -2,8 +2,11 @@ extends Control
 
 var scroll_speed = 200
 
+func _ready():
+	$MENU/VBoxContainer/StartButton.grab_focus()
+
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_space"):
 		get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	
 
