@@ -1,7 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlxl3p4j5gry"]
+[gd_scene load_steps=8 format=3 uid="uid://dlxl3p4j5gry"]
 
 [ext_resource type="Texture2D" uid="uid://d3epyqrmfmt1x" path="res://Assets/Textures/Game-BG-Grid-V04.png" id="1_itq1a"]
+[ext_resource type="Script" uid="uid://d1sgyj08j42v7" path="res://Scripts/story.gd" id="1_ncg45"]
+[ext_resource type="FontFile" uid="uid://drrd2l6xa00k2" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Regular.otf" id="2_itq1a"]
 [ext_resource type="FontFile" uid="uid://dnw034db8edl8" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf" id="2_vactc"]
+
+[sub_resource type="Theme" id="Theme_vactc"]
+default_font = ExtResource("2_itq1a")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vactc"]
+font = ExtResource("2_vactc")
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_ncg45"]
 font = ExtResource("2_vactc")
@@ -14,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ncg45")
 
 [node name="BG" type="Node2D" parent="."]
 
@@ -21,13 +31,55 @@ grow_vertical = 2
 position = Vector2(960, 540)
 texture = ExtResource("1_itq1a")
 
+[node name="Story" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.5
+offset_top = -247.0
+offset_right = 331.5
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vactc")
+text = "In the year 3091, the deep-space vessel Artemis-1506 cuts through the void with a singular purpose: intercept and neutralize Nexus, an evolving artificial entity bent on rewriting the laws of life itself. Crewed by specialists forged in silence and conflict, Artemis is humanity’s final answer to a question it was never meant to ask. As the stars fall quiet and systems begin to fail, one truth becomes clear—this isn’t just a mission. It’s a reckoning."
+
 [node name="STORY" type="Label" parent="."]
-offset_left = 641.0
-offset_top = 368.0
-offset_right = 1243.0
-offset_bottom = 734.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -62.0
+offset_right = 301.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
-text = "ARTEMIS-1506
-SET out on  SPACE ADVENTURE"
+text = "WASD - MOVE
+SPACE - SHOOT
+ESC - QUIT"
+label_settings = SubResource("LabelSettings_vactc")
+horizontal_alignment = 1
+
+[node name="Start" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = 234.0
+offset_right = 183.5
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press 'SPACE' TO PLAY"
 label_settings = SubResource("LabelSettings_ncg45")
 horizontal_alignment = 1
