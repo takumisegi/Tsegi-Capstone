@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmoiyac25huw4"]
+
+[ext_resource type="Texture2D" uid="uid://d3epyqrmfmt1x" path="res://Assets/Textures/Game-BG-Grid-V04.png" id="1_w444v"]
+[ext_resource type="FontFile" uid="uid://dnw034db8edl8" path="res://Assets/Fonts/GRIDNIK/FoundryGridnik Bold.otf" id="2_y20pf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncg45"]
+font = ExtResource("2_y20pf")
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="Game-bg-grid-v04" type="Sprite2D" parent="BG"]
+position = Vector2(960, 540)
+texture = ExtResource("1_w444v")
+
+[node name="STORY" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -63.0
+offset_right = 301.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "WASD - MOVE
+SPACE - SHOOT
+ESC - QUIT"
+label_settings = SubResource("LabelSettings_ncg45")
+horizontal_alignment = 1

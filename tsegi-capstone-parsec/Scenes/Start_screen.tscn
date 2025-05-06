@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://coh0h8qy6ymqc" path="res://Scripts/start_screen.gd" id="1_ytx0o"]
 [ext_resource type="Texture2D" uid="uid://d3epyqrmfmt1x" path="res://Assets/Textures/Game-BG-Grid-V04.png" id="3_vlme4"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6d030"]
+[sub_resource type="LabelSettings" id="LabelSettings_t23ym"]
 font = ExtResource("1_6d030")
 font_size = 150
 
@@ -27,40 +27,56 @@ script = ExtResource("1_ytx0o")
 position = Vector2(960, 540)
 texture = ExtResource("3_vlme4")
 
-[node name="Title" type="CenterContainer" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.5
+offset_top = -162.0
+offset_right = 304.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PARSEC"
+label_settings = SubResource("LabelSettings_t23ym")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MENU" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = 138.0
+offset_right = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Title"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MENU"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Title/VBoxContainer"]
-layout_mode = 2
-text = "PARSEC"
-label_settings = SubResource("LabelSettings_6d030")
-horizontal_alignment = 1
-
-[node name="Start" type="Label" parent="Title/VBoxContainer"]
+[node name="Start" type="Label" parent="MENU/VBoxContainer"]
 layout_mode = 2
 text = "Press 'SPACE' TO PLAY"
 label_settings = SubResource("LabelSettings_vlme4")
 horizontal_alignment = 1
 
-[node name="How To" type="Label" parent="Title/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MENU/VBoxContainer"]
 layout_mode = 2
-text = "HOW TO"
-label_settings = SubResource("LabelSettings_vlme4")
-horizontal_alignment = 1
+text = "START"
 
-[node name="STORY" type="Label" parent="Title/VBoxContainer"]
+[node name="StoryButton" type="Button" parent="MENU/VBoxContainer"]
 layout_mode = 2
 text = "STORY"
-label_settings = SubResource("LabelSettings_vlme4")
-horizontal_alignment = 1
+
+[node name="Quit" type="Button" parent="MENU/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
 
 [node name="2025 © STUDIO TIKTAK" type="Label" parent="."]
 layout_mode = 1
@@ -77,3 +93,7 @@ grow_vertical = 0
 text = "2025 © STUDIO TIKTAK
 "
 horizontal_alignment = 1
+
+[connection signal="pressed" from="MENU/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MENU/VBoxContainer/StoryButton" to="." method="_on_story_button_pressed"]
+[connection signal="pressed" from="MENU/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
